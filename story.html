@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Legend - Santa's Guardians</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/site-logo.png" alt="Santa's Guardians Logo" />
+                    <h1>Santa's Guardians</h1>
+                </a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
+                <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+                <li><a href="story.html" onclick="closeMenu()">Story</a></li>
+                <li><a href="activities.html" onclick="closeMenu()">Activities</a></li>
+                <li><a href="index.html#location" onclick="closeMenu()">Location</a></li>
+                <li><a href="index.html#book" onclick="closeMenu()">Book Now</a></li>
+                <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h2>The Legend of the Guardians</h2>
+            <p class="hero-subtitle">The ancient tale of Santa's defenders</p>
+        </div>
+    </section>
+
+    <!-- Story Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-wrapper">
+                <h3>The Troll Invasion</h3>
+                <p>When the world was young, Santa Claus and his elves faced an existential threat: trolls, the naughtiest of all creatures. These big, hairy beings from the cold and barren mountains had always been a nuisance, but this time they came more numerous than ever. They invaded Santa's realm, Lapland, and caused much harm there to elves and humans alike. They wanted to end Christmas, to get rid of the holiday that brought other creatures the warmth, light and joy they needed to survive the dark winter. Without it, everyone would easily fall prey to the trolls.</p>
+
+                <h3>The Birth of S.A.F.E.</h3>
+                <p>To protect all that is good, Santa founded S.A.F.E, "Santa's Academy for Fighter Elves". There the elves were trained to fight the trolls. These fighter elves eventually came to be known as "Santa's Guardians". The best techniques and tactics for taking down trolls were researched and written in manuscripts by the Academy's grand masters.</p>
+
+                <h3>The Great Battles</h3>
+                <p>Times went on and many battles were fought between the trolls and the Guardians. Losses could not be avoided. The destiny of the grand masters was to perish, as they were the ones to lead the Guardians to battle. Their manuscripts were lost. Finally, with the help of Santa's magic, the elves triumphed for good and drove the trolls back to their mountain kingdom. Since then they have stayed away.</p>
+
+                <h3>The Return of the Threat</h3>
+                <p>However, recently rumors of wandering troll groups have once again started to emerge. This has caused much distress, and Santa wants the problem solved. Luckily, Santa's Guardians have not been idle, though not many of them are left anymore. They still run the Academy, transferring the knowledge – now almost extinct – to the younger generations. They have been honing their skills and are ready to train more guardians to defend Santa's realm. All they need is fresh recruits!</p>
+
+                <div class="cta-box">
+                    <h3>Ready to Join the Ranks?</h3>
+                    <p>Santa needs brave souls to protect Christmas and all that is good.</p>
+                    <a href="index.html#book" class="btn">Book Your Training</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Santa's Guardians</h3>
+            <p>Rovaniemi, Lapland</p>
+            <a href="mailto:info@santasguardians.com">info@santasguardians.com</a>
+            <p style="margin-top: 1rem; opacity: 0.7;">© 2025 Santa's Guardians. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    </script>
+</body>
+</html>

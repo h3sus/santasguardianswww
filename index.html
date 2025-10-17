@@ -23,7 +23,8 @@
             </div>
             <ul id="navMenu">
                 <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                <li><a href="#story" onclick="closeMenu()">Story</a></li>
+                <li><a href="story.html" onclick="closeMenu()">Story</a></li>
+                <li><a href="activities.html" onclick="closeMenu()">Activities</a></li>
                 <li><a href="#location" onclick="closeMenu()">Location</a></li>
                 <li><a href="#book" onclick="closeMenu()">Book Now</a></li>
                 <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
@@ -46,12 +47,25 @@
                 <div class="story-text">
                     <h2>Join the Ranks</h2>
                     <!-- <p class="large-text">What if you could fight like a medieval fantasy warrior without having to worry about hurting yourself or others? Come and find out!</p> -->
-                    <p>Yes, we train fighter elves. Why?</p>
+                    <p>We train fighter elves. Why?</p>
                     <p>Because, when the world was young, trolls invaded Santa's realm, Lapland. The best and bravest of Santa's elves were sent against them. They were victorious, and began to be known as Santa's Guardians.</p>
                     <p>Now, centuries later, trolls have been sighted in Santa's hometown Rovaniemi again, but the elves are ready to train more Guardians for Santa.</p>
                     <p>All they need is fresh recruits!</p>
                 </div>
                 <img src="images/elf-knight-front.png" alt="Santa's Guardians' Elf Knight" class="story-image-character">
+            </div>
+        </div>
+    </section>
+
+        <!-- Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_32-2048x1150.jpg" alt="Smiling Elf Fighting Bootcamp participants">
+                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_24-1024x575.jpg" alt="Guardian in training gear" style="object-position: 10%;">
+                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_20-1024x575.jpg" alt="Elf Fighting with bow" style="object-position: 5%;">
+                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_17-1024x575.jpg" alt="Group combat training" style="object-position: 65%;">
+                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_14-2048x1150.jpg" alt="Elf Fighters engaging in combat with padded weapons">
             </div>
         </div>
     </section>
@@ -62,7 +76,7 @@
             <h2>Start Your Adventure Here</h2>
             <div class="cta-grid">
                 <a href="#story" class="cta-card">
-                    <h3>📖 The Story</h3>
+                    <h3>📖 Story</h3>
                     <p>Read more about the history of how the Guardians came to be</p>
                 </a>
                 <a href="#location" class="cta-card">
@@ -74,7 +88,7 @@
                     <p>Book a training session with the Guardians</p>
                 </a>
                 <a href="#contact" class="cta-card">
-                    <h3>✉️ Contact</h3>
+                    <h3>✉️ Contact Us</h3>
                     <p>Contact us for more information</p>
                 </a>
             </div>
@@ -87,6 +101,9 @@
             <h2>Testimonials</h2>
             <div class="testimonial-grid">
                 <div class="testimonial">
+                    <p>"I'm not a sporty type but that was definitely fun anyways. I really liked the amount of different toy weapons we were able to use and also different stages of battles."</p>
+                </div>
+                <div class="testimonial">
                     <p>"Super fun!!! Active, would be great for team bonding! My favorite part of the trip, great hosts."</p>
                 </div>
                 <div class="testimonial">
@@ -96,43 +113,28 @@
                     <p>"It was cool because especially as a girl I have never fought with weapons in my childhood."</p>
                 </div>
                 <div class="testimonial">
-                    <p>"It is definitely something different compared to the usual activities."</p>
-                </div>
-                <div class="testimonial">
                     <p>"At first I felt a little weird fighting but then I had so much fun! It was nice to be able to play. It had been a long time since childhood."</p>
                 </div>
                 <div class="testimonial">
-                    <p>"I really liked the amount of different toy weapons we were able to use and also different stages of battles. I'm not a sporty type but that was definitely fun anyways."</p>
+                    <p>"It is definitely something different compared to the usual activities."</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section>
-        <div class="container">
-            <h2>Experience the Adventure</h2>
-            <div class="gallery">
-                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_20-1024x575.jpg" alt="Elf Fighting with bow">
-                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_24-1024x575.jpg" alt="Guardian in training gear">
-                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_17-1024x575.jpg" alt="Group combat training">
-            </div>
-        </div>
-    </section>
 
     <!-- Location -->
-    <section>
+    <section class="location">
         <div class="container" id="location">
             <h2>Location</h2>
-            <p>We are located in the heart of Santa's base of operations, very close to SantaPark! And not too far from Santa's Village at the Arctic Circle, either.</p>
-
+            <p>We are located very close to SantaPark! And not too far from Santa's Village at the Arctic Circle, either.</p>
             <p>10 minutes before your booked session begins, we will come and escort you up from one of two pickup spots:</p>
             <ol>   
-                <li><a href="https://maps.app.goo.gl/py14bc2SqSzqy6BH7" target="_blank" rel="noreferrer noopener"><strong>SantaPark bus stop</strong></a>, or</li>
-                <li><a href="https://maps.app.goo.gl/gpP1gJ71oRoZmTHBA" target="_blank" rel="noreferrer noopener"><strong>Hostel Ibedcity</strong></a> yard.</li>
+                <li><a href="https://maps.app.goo.gl/py14bc2SqSzqy6BH7" target="_blank" rel="noreferrer noopener"><strong>SantaPark bus stop</strong></a></li>
+                <li><a href="https://maps.app.goo.gl/gpP1gJ71oRoZmTHBA" target="_blank" rel="noreferrer noopener"><strong>Hostel Ibedcity</strong></a></li>
             </ol>
             <p>It is a 5 minute walk from both. Just select your pickup spot while booking.</p>
-            <p>It is best leave to us your phone number when booking, so that we can call you if we don't see you there!</p>
+            <p>Please write your phone number in the message during booking, so that we can call you if we don't see you there!</p>
             <div id="map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15765.40855801916!2d25.78397055647118!3d66.54408033121338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x442b4d5edcd5f251%3A0x2fb60171003ea564!2sSanta&#39;s%20Guardians!5e1!3m2!1sfi!2sfi!4v1759689833653!5m2!1sfi!2sfi" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -140,11 +142,27 @@
     </section>
 
     <!-- Contact -->
-    <section>
+    <section class="contact">
         <div class="container" id="contact">
             <h2>Contact us</h2>
             <div>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqw3ZIapXriHuEpPmcr7gkfuz39QXDhZKsbHDuc6r7ld7rLw/viewform?embedded=true" width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0">Ladataan…</iframe>
+                <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqw3ZIapXriHuEpPmcr7gkfuz39QXDhZKsbHDuc6r7ld7rLw/viewform?embedded=true" width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading..</iframe> -->
+            <form action="https://formspree.io/f/xkgqyqqo" method="POST">
+                <label>
+                    Your email: *
+                    <input type="email" name="email" required placeholder="your@email.com">
+                </label>
+                <label>
+                    Your phone number (optional):
+                    <input type="text" name="phone" placeholder="+358 123 456 789">
+                </label>
+                <label>
+                    Your message: *
+                    <textarea name="message" required placeholder="Tell us about your booking or question..." minlength="1"></textarea>
+                </label>
+                <!-- your other form fields go here -->
+                <button type="submit">Send</button>
+            </form>
             </div>
         </div>
     </section>
@@ -154,7 +172,7 @@
         <div class="container">
             <h3>Santa's Guardians</h3>
             <p>Rovaniemi, Lapland</p>
-            <p>Contact us for more information</p>
+            <a href="mailto:info@santasguardians.com">info@santasguardians.com</a>
             <p style="margin-top: 1rem; opacity: 0.7;">© 2025 Santa's Guardians. All rights reserved.</p>
         </div>
     </footer>

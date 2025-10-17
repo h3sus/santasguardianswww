@@ -165,7 +165,7 @@ nav a:hover {
 }
 
 /* Story Section */
-.story-section {
+.story-section, .gallery {
     background: linear-gradient(135deg, #0a1a2e 50%, #16213e 100%);
 }
 
@@ -182,8 +182,8 @@ nav a:hover {
     font-size: 2rem;
 }
 
-.story-text {
-    font-size: 1.1rem;
+.story-text, .location {
+    font-size: 1.2rem;
     line-height: 1.8;
     color: #fff8e7;
 }
@@ -194,6 +194,10 @@ nav a:hover {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+.story-text p, .location p {
+    margin-bottom: 0.5rem;
 }
 
 .story-image {
@@ -307,13 +311,13 @@ nav a:hover {
 }
 
 /* Testimonials */
-.testimonials {
+.testimonials, .location {
     /* background: linear-gradient(135deg, #0d1b1e 0%, #1a2847 100%); */
     background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
     color: #fff8e7;
 }
 
-.testimonials h2 {
+.testimonials h2, .location h2, .gallery h2, .contact h2 {
     font-family: 'MedievalSharp', 'Papyrus', cursive;
     text-align: center;
     margin-bottom: 3rem;
@@ -330,12 +334,16 @@ nav a:hover {
 
 .testimonial {
     /* background: rgba(26, 40, 71, 0.4); */
-    background: linear-gradient(135deg, #0d3822 0%, #04311b 100%);
+    background: linear-gradient(135deg, #145232 25%, #04311b 100%);
+    /* background: linear-gradient(135deg, #2fc3f0 0%, #0d689c 100%); */
+    /* background: linear-gradient(135deg, #174c91 0%, #051b4d 100%); */
+
     padding: 2rem;
     border-radius: 12px;
     border-left: 4px solid #d4af37;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.1);
 }
 
 .testimonial p {
@@ -345,7 +353,7 @@ nav a:hover {
 }
 
 /* Gallery */
-.gallery {
+.gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
@@ -361,13 +369,13 @@ nav a:hover {
     box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3);
 }
 
-.gallery img:hover {
+/* .gallery img:hover {
     transform: scale(1.05);
     border-color: #d4af37;
     box-shadow: 
         0 0 0 1px #d4af37,
         0 0 20px rgba(212, 175, 55, 0.5);
-}
+} */
 
 /* Button */
 .btn {
@@ -425,6 +433,198 @@ nav a:hover {
     text-shadow: 0 0 15px rgba(212, 175, 55, 1);
 }
 
+/* Location Section */
+.location {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+    color: #fff8e7;
+}
+
+.location h2 {
+    font-family: 'MedievalSharp', 'Papyrus', cursive;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #d4af37;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+}
+
+.location p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #fff8e7;
+    margin-bottom: 0.5rem;
+}
+
+.location ol {
+    font-size: 1.2rem;
+    line-height: 2;
+    margin: 2rem 0 2rem 2rem;
+    color: #fff8e7;
+}
+
+.location ol li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.location ol li::marker {
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.location a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.location a:hover {
+    color: #f4e4c1;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+    border-bottom: 2px solid #d4af37;
+}
+
+#map {
+    margin-top: 3rem;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px double rgba(212, 175, 55, 0.4);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+#map iframe {
+    display: block;
+    border-radius: 8px;
+}
+
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, #0a1a2e 0%, #16213e 100%);
+    color: #fff8e7;
+}
+
+.contact h2 {
+    font-family: 'MedievalSharp', 'Papyrus', cursive;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #d4af37;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #1a2847 0%, #0d1b1e 100%);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 3px double rgba(212, 175, 55, 0.5);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+.contact label {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #f4e4c1;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.contact input[type="email"],
+.contact input[type="text"],
+.contact textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(10, 22, 40, 0.6);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    color: #fff8e7;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.contact input[type="email"]:focus,
+.contact input[type="text"]:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    background: rgba(10, 22, 40, 0.8);
+}
+
+.contact textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact button[type="submit"] {
+    font-family: 'MedievalSharp', 'Papyrus', cursive;
+    width: 100%;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #a30822 50%, #680512 100%);
+    color: #ffffff;
+    border: 3px double #d4af37;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 
+        0 0 0 1px #d4af37,
+        0 0 0 5px rgba(212, 175, 55, 0.2),
+        0 4px 15px rgba(196, 30, 58, 0.5);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.contact button[type="submit"]::before,
+.contact button[type="submit"]::after {
+    content: '✦';
+    position: absolute;
+    color: #d4af37;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+    transition: all 0.3s;
+}
+
+.contact button[type="submit"]::before {
+    top: -8px;
+    left: -8px;
+}
+
+.contact button[type="submit"]::after {
+    bottom: -8px;
+    right: -8px;
+}
+
+.contact button[type="submit"]:hover {
+    background: linear-gradient(135deg, #c41e3a 0%, #8B1E3F 100%);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 0 0 1px #d4af37,
+        0 0 0 5px rgba(212, 175, 55, 0.3),
+        0 6px 20px rgba(196, 30, 58, 0.7);
+}
+
+.contact button[type="submit"]:hover::before,
+.contact button[type="submit"]:hover::after {
+    text-shadow: 0 0 15px rgba(212, 175, 55, 1);
+}
+
+/* Placeholder text styling */
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: rgba(244, 228, 193, 0.5);
+}
+
+
+
 /* Footer */
 footer {
     background: #050d14;
@@ -440,7 +640,18 @@ footer h3 {
     text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
+a[href^="mailto:"] {
+    color: #d4af37;
+    text-decoration: none;
+    transition: all 0.3s;
+    border-bottom: 1px solid transparent;
+}
 
+a[href^="mailto:"]:hover {
+    color: #f4e4c1;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+    border-bottom: 1px solid #d4af37;
+}
 
 .snowflake {
     position: absolute;
@@ -470,6 +681,114 @@ footer h3 {
 .hero {
     position: relative;
     overflow: hidden; /* keeps snowflakes inside hero section */
+}
+
+
+
+/* Page Hero Section (for story.html and activities.html) */
+.page-hero {
+    background: linear-gradient(135deg, #0a1a2e 0%, #16213e 100%);
+    padding: 8rem 2rem 4rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.page-hero h2 {
+    font-family: 'MedievalSharp', 'Papyrus', cursive;
+    font-size: 3rem;
+    color: #d4af37;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #f4e4c1;
+    font-style: italic;
+}
+
+/* Content Section */
+.content-section {
+    background: linear-gradient(to bottom, #0d1b2a 0%, #1b263b 100%);
+    padding: 4rem 0;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff8e7;
+}
+
+.content-wrapper h3 {
+    font-family: 'MedievalSharp', 'Papyrus', cursive;
+    color: #d4af37;
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+.content-wrapper h3:first-child {
+    margin-top: 0;
+}
+
+.content-wrapper p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #fff8e7;
+}
+
+.intro-text {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #f4e4c1;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: rgba(26, 40, 71, 0.4);
+    border-left: 4px solid #d4af37;
+    border-radius: 8px;
+}
+
+/* CTA Box */
+.cta-box {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: linear-gradient(135deg, #a30822 0%, #680512 100%);
+    border-radius: 12px;
+    border: 3px double rgba(212, 175, 55, 0.5);
+    box-shadow: 0 8px 25px rgba(139, 30, 63, 0.3);
+    text-align: center;
+}
+
+.cta-box h3 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.cta-box p {
+    color: #f4e4c1;
+    margin-bottom: 2rem;
+}
+
+.cta-box .btn {
+    margin-top: 1rem;
+}
+
+/* Footer mailto link */
+footer a[href^="mailto:"] {
+    display: block;
+    color: #d4af37;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+footer a[href^="mailto:"]:hover {
+    color: #f4e4c1;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
 }
 
 
