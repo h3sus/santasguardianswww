@@ -26,7 +26,7 @@
                 <li><a href="story.html" onclick="closeMenu()">Story</a></li>
                 <li><a href="activities.html" onclick="closeMenu()">Activities</a></li>
                 <li><a href="#location" onclick="closeMenu()">Location</a></li>
-                <li><a href="booking" target="_blank" onclick="closeMenu()">Book Now</a></li>
+                <li><a href="#booking" target="_blank" onclick="closeMenu()">Book Now</a></li>
                 <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             </ul>
         </nav>
@@ -57,7 +57,42 @@
         </div>
     </section>
 
-        <!-- Gallery -->
+    <!-- CTA Section -->
+    <section class="cta-section" id="book">
+        <div class="container">
+            <h2>Start Your Adventure Here</h2>
+            <div class="cta-grid">
+                <a href="story.html" class="cta-card">
+                    <h3>📖 Story</h3>
+                    <p>Read more about the history of how the Guardians came to be</p>
+                </a>
+                <a href="#location" class="cta-card">
+                    <h3>📍 Location</h3>
+                    <p>Find out where we are located and how to reach us in Rovaniemi</p>
+                </a>
+                <a href="#booking" target="_blank" class="cta-card">
+                    <h3>⚔️ Book Now</h3>
+                    <p>Book a training session with the Guardians</p>
+                </a>
+                <a href="#contact" class="cta-card">
+                    <h3>✉️ Contact Us</h3>
+                    <p>Contact us for more information</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Video -->
+    <section class="video">
+        <!-- <h2>Videos</h2> -->
+        <div class="container">
+            <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_32-2048x1150.jpg" alt="Smiling Elf Fighting Bootcamp participants">
+        </div>
+    </section>
+
+
+    <!-- Gallery -->
     <section class="gallery">
         <div class="container">
             <div class="gallery-grid">
@@ -70,30 +105,16 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="book">
-        <div class="container">
-            <h2>Start Your Adventure Here</h2>
-            <div class="cta-grid">
-                <a href="#story" class="cta-card">
-                    <h3>📖 Story</h3>
-                    <p>Read more about the history of how the Guardians came to be</p>
-                </a>
-                <a href="#location" class="cta-card">
-                    <h3>📍 Location</h3>
-                    <p>Find out where we are located and how to reach us in Rovaniemi</p>
-                </a>
-                <a href="https://www.sumupbookings.com/santas-guardians" target="_blank" class="cta-card">
-                    <h3>⚔️ Book Now</h3>
-                    <p>Book a training session with the Guardians</p>
-                </a>
-                <a href="#contact" class="cta-card">
-                    <h3>✉️ Contact Us</h3>
-                    <p>Contact us for more information</p>
-                </a>
-            </div>
-        </div>
+
+    <!-- Booking -->
+    <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=227df132-3bae-462d-9dc4-7c5348d81248" async></script>
+    <section class="booking" id="booking">
+         <h2>Book Now</h2>
+        <div class="container" >
+            <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/227df132-3bae-462d-9dc4-7c5348d81248/experience/1103047"></div>
+            <!-- <noscript>Please enable javascript in your browser to book</noscript> -->
     </section>
+
 
     <!-- Testimonials -->
     <section class="testimonials">
@@ -124,8 +145,8 @@
 
 
     <!-- Location -->
-    <section class="location">
-        <div class="container" id="location">
+    <section class="location" id="location">
+        <div class="container">
             <h2>Location</h2>
             <p>We are located very close to SantaPark! And not too far from Santa's Village at the Arctic Circle, either.</p>
             <p>10 minutes before your booked session begins, we will come and escort you up from one of two pickup spots:</p>
@@ -141,22 +162,10 @@
         </div>
     </section>
     
-    <!-- Booking -->
-    <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=227df132-3bae-462d-9dc4-7c5348d81248" async></script>
-    <section class="booking">
-         <h2>Book Now</h2>
-        <div class="container" id="booking">
-            <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/227df132-3bae-462d-9dc4-7c5348d81248/experience/1103047"></div>
-            <!-- <noscript>Please enable javascript in your browser to book</noscript> -->
-    </section>
-
-     
-
-
 
     <!-- Contact -->
-    <section class="contact">
-        <div class="container" id="contact">
+    <section class="contact" id="contact">
+        <div class="container" >
             <h2>Contact us</h2>
             <div>
                 <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqw3ZIapXriHuEpPmcr7gkfuz39QXDhZKsbHDuc6r7ld7rLw/viewform?embedded=true" width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading..</iframe> -->
@@ -180,6 +189,7 @@
         </div>
     </section>
 
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -190,6 +200,8 @@
         </div>
     </footer>
 
+
+    <!-- JS -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('navMenu');

@@ -1,0 +1,83 @@
+* {
+  color: #fff;
+}
+
+.ProductPageTitle h2 {
+    color: #d4af37;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+/* Description text */
+.ProductPageDescription p {
+    color: #fff8e7 !important;
+    text-shadow: none;
+}
+
+/* Section headers (Participants, Choose a date, Booking Summary) */
+h2.sc-dmqHEX {
+    color: #d4af37 !important;
+}
+
+/* Tabs (Description, Meeting points, Pick-up) */
+.ProductPageDescriptionTab,
+.ProductPageMeetingPointTab,
+.ProductPagePickupTab {
+    background: linear-gradient(135deg, #145232 25%, #04311b 100%) !important;
+    color: #fff8e7 !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 8px 8px 0 0 !important;
+    padding: 0.8rem 1.5rem !important;
+}
+
+.ProductPageDescriptionTab.selected,
+.ProductPageMeetingPointTab.selected,
+.ProductPagePickupTab.selected {
+    background: linear-gradient(135deg, #1a5c3a 0%, #0d4d2d 100%) !important;
+    color: #d4af37 !important;
+    border-bottom: 3px solid #d4af37 !important;
+}
+
+.ProductPageDescriptionTab:hover,
+.ProductPageMeetingPointTab:hover,
+.ProductPagePickupTab:hover {
+    background: linear-gradient(135deg, #1a5c3a 0%, #0d4d2d 100%) !important;
+}
+
+/* Available calendar days */
+.CalendarDayAvailable {
+    background: linear-gradient(135deg, #145232 25%, #04311b 100%) !important;
+    color: #fff8e7 !important;
+    border: 1px solid #d4af37 !important;
+}
+
+.CalendarDayAvailable:hover {
+    background-color: rgba(163, 8, 34, 0.5) !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Calendar day numbers */
+.CalendarDayOfMonth {
+    color: #fff8e7 !important;
+}
+
+/* Not available days */
+.CalendarDayNotAvailable {
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Price text */
+.CalendarDayPrice,
+.Currency,
+.Price {
+    color: #d4af37 !important;
+    font-weight: bold !important;
+}
+
+#PricingCategories, .Participant, .ParticipantSelection p, .Select-option, .Select-value-label {
+  color: #0a1628;
+  
+}
+
+.SummaryWrapper h3, .SummaryWrapper h4, .SummaryWrapper h5, .SummaryTitle, .SummaryTitle span, .SummaryItem, .SummaryPrice {
+  color: #0a1628;
+}

@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+
+/* Main product title */
+.ProductPageTitle h2 {
+    color: #d4af37 !important;
+    font-family: 'MedievalSharp', Papyrus, cursive !important;
+    font-size: 2.5rem !important;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.6) !important;
+}
+
+/* Book Now button */
+.BookNow {
+    background: linear-gradient(135deg, #a30822 50%, #680512 100%) !important;
+    border: 2px solid #d4af37 !important;
+    color: white !important;
+    font-weight: bold !important;
+    border-radius: 8px !important;
+}
+
+.BookNow:hover {
+    background: linear-gradient(135deg, #c41e3a 0%, #8B1E3F 100%) !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Description text */
+.ProductPageDescription p {
+    color: #fff8e7 !important;
+}
+
+/* Section headers (Participants, Choose a date, Booking Summary) */
+h2.sc-dmqHEX {
+    color: #d4af37 !important;
+    font-family: 'MedievalSharp', Papyrus, cursive !important;
+}
+
+/* Tabs (Description, Meeting points, Pick-up) */
+.ProductPageDescriptionTab,
+.ProductPageMeetingPointTab,
+.ProductPagePickupTab {
+    background: linear-gradient(135deg, #145232 25%, #04311b 100%) !important;
+    color: #fff8e7 !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 8px 8px 0 0 !important;
+    padding: 0.8rem 1.5rem !important;
+}
+
+.ProductPageDescriptionTab.selected,
+.ProductPageMeetingPointTab.selected,
+.ProductPagePickupTab.selected {
+    background: linear-gradient(135deg, #1a5c3a 0%, #0d4d2d 100%) !important;
+    color: #d4af37 !important;
+    border-bottom: 3px solid #d4af37 !important;
+}
+
+.ProductPageDescriptionTab:hover,
+.ProductPageMeetingPointTab:hover,
+.ProductPagePickupTab:hover {
+    background: linear-gradient(135deg, #1a5c3a 0%, #0d4d2d 100%) !important;
+}
+
+/* Remove blue from selected tabs */
+.ProductPageDescriptionTab.selected,
+.ProductPageMeetingPointTab.selected,
+.ProductPagePickupTab.selected {
+    background: linear-gradient(135deg, #1a5c3a 0%, #0d4d2d 100%) !important;
+    color: #d4af37 !important;
+    border-bottom: 3px solid #d4af37 !important;
+    box-shadow: none !important;
+}
+
+/* Remove blue from tab hover */
+.ProductPageDescriptionTab:hover,
+.ProductPageMeetingPointTab:hover,
+.ProductPagePickupTab:hover {
+    background: linear-gradient(135deg, #1a5c3a 0%, #0d4d2d 100%) !important;
+    box-shadow: none !important;
+}
+
+/* Target any blue borders/outlines */
+.ProductPageDescriptionTab,
+.ProductPageMeetingPointTab,
+.ProductPagePickupTab {
+    background: linear-gradient(135deg, #145232 25%, #04311b 100%) !important;
+    color: #fff8e7 !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 8px 8px 0 0 !important;
+    padding: 0.8rem 1.5rem !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Available calendar days */
+.CalendarDayAvailable {
+    background-color: rgba(163, 8, 34, 0.3) !important;
+    border: 1px solid #d4af37 !important;
+}
+
+.CalendarDayAvailable:hover {
+    background-color: rgba(163, 8, 34, 0.5) !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Calendar day numbers */
+.CalendarDayOfMonth {
+    color: #fff8e7 !important;
+}
+
+/* Not available days */
+.CalendarDayNotAvailable {
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Price text */
+.CalendarDayPrice,
+.Currency,
+.Price {
+    color: #d4af37 !important;
+    font-weight: bold !important;
+}
+
+/* Plus/Minus buttons for participants */
+.PlusButton svg path,
+.MinusButton svg rect {
+    fill: #d4af37 !important;
+}
+
+/* Checkout button */
+button[class*="Checkout"] {
+    background: linear-gradient(135deg, #a30822 50%, #680512 100%) !important;
+    border: 2px solid #d4af37 !important;
+}
+
+button[class*="Checkout"]:hover {
+    background: linear-gradient(135deg, #c41e3a 0%, #8B1E3F 100%) !important;
+}
+
+/* Summary section */
+.SummaryOverview {
+    background: rgba(26, 40, 71, 0.4) !important;
+    border: 2px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 12px !important;
+}
+
+/* Difficulty and duration icons */
+.Duration svg path,
+.Difficulty svg path {
+    fill: #d4af37 !important;
+}
+
+/* Category labels */
+.ActivityCategoryLabel,
+.ActivityAttributeLabel {
+    background: rgba(163, 8, 34, 0.3) !important;
+    color: #f4e4c1 !important;
+    border: 1px solid #d4af37 !important;
+}
+
+/* Headers in More Info section */
+h4 {
+    color: #d4af37 !important;
+}
+
+/* Remove the decorative underlines */
+.sc-fmXJyp {
+    display: none !important;
+}

@@ -1,6 +1,11 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Lato:wght@400;700&display=swap');
 
+#home, #location, #booking, #contact {
+    scroll-margin-top: 150px;
+}
+
+
 html { scroll-behavior: smooth; }
 
 * {
@@ -157,6 +162,7 @@ nav a:hover {
     color: #fff8e7;
 }
 
+
 /* Container */
 .container {
     max-width: 1200px;
@@ -165,6 +171,10 @@ nav a:hover {
 }
 
 /* Story Section */
+.story-section {
+    margin-bottom: 3rem;
+}
+
 .story-section, .gallery {
     background: linear-gradient(135deg, #0a1a2e 50%, #16213e 100%);
 }
@@ -317,7 +327,7 @@ nav a:hover {
     color: #fff8e7;
 }
 
-.testimonials h2, .location h2, .gallery h2, .contact h2, .booking h2{
+.testimonials h2, .location h2, .gallery h2, .contact h2, .booking h2, .video h2 {
     font-family: 'MedievalSharp', 'Papyrus', cursive;
     text-align: center;
     margin-bottom: 3rem;
@@ -629,6 +639,15 @@ nav a:hover {
 }
 
 
+.video img {
+
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.3s;
+    border: 3px double rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3);
+}
 
 /* Footer */
 footer {
@@ -692,11 +711,19 @@ a[href^="mailto:"]:hover {
 
 /* Page Hero Section (for story.html and activities.html) */
 .page-hero {
-    background: linear-gradient(135deg, #0a1a2e 0%, #16213e 100%);
+    /* background: linear-gradient(135deg, #0a1a2e 0%, #16213e 100%); */
+    
+    background: linear-gradient(rgba(10, 22, 40, 0.7), rgba(10, 22, 40, 0.7)), url('images/site-hero-bg-no-logo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
     padding: 8rem 2rem 4rem 2rem;
     text-align: center;
     border-bottom: 2px solid rgba(212, 175, 55, 0.3);
 }
+
+
 
 .page-hero h2 {
     font-family: 'MedievalSharp', 'Papyrus', cursive;
