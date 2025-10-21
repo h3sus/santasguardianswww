@@ -809,6 +809,11 @@ a[href^="mailto:"]:hover {
 }
 
 
+.video-iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Standard YouTube ratio */
+}
+
 
 /* Footer mailto link */
 footer a[href^="mailto:"] {
