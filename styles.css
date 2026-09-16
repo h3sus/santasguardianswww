@@ -1818,7 +1818,8 @@ body.menu-open {
 
     .sub-hero-art--activities {
         height: clamp(400px, 62vh, 600px);
-        background-position: center 45%;
+        /* anchor near the top so heads and Santa hats stay in frame */
+        background-position: center 8%;
     }
 
     .sub-hero-text {
