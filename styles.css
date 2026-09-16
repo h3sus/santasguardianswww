@@ -1,8 +1,31 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Lato:wght@400;700&display=swap');
 
+:root {
+    /* brand */
+    --gold: #d4af37;
+    --gold-soft: #f4e4c1;
+    --cream: #fff8e7;
+    --red: #a30822;
+    --red-dark: #680512;
+    --navy-900: #0a1628;
+    --navy-800: #0d1b2a;
+    --navy-700: #1b263b;
+    /* layout */
+    --header-h: 64px;
+    --wrap: 1200px;
+    --pad-x: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --header-h: 92px;
+        --pad-x: 2rem;
+    }
+}
+
 #home, #location, #booking, #contact {
-    scroll-margin-top: 150px;
+    scroll-margin-top: calc(var(--header-h) + 12px);
 }
 
 
@@ -27,7 +50,7 @@ body {
 header {
     background: linear-gradient(135deg, #0a1628 0%, #1a2847 100%);
     color: white;
-    padding: 1rem 0;
+    padding: 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -36,9 +59,10 @@ header {
 }
 
 nav {
-    max-width: 1200px;
+    max-width: var(--wrap);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 var(--pad-x);
+    min-height: var(--header-h);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,13 +79,14 @@ nav {
 }
 
 .logo img {
-    height: 10vh;
+    height: 44px;
     width: auto;
     vertical-align: middle;
     /* filter: brightness(0.5) sepia(1) hue-rotate(-50deg) saturate(6); */
 }
 
-.logo h1 {
+.logo h1,
+.logo .logo-text {
     display: none;
 }
 
@@ -108,59 +133,7 @@ nav a:hover {
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
-/* Hero Section */
-.hero {
-    background: url('images/site-hero-bg-no-logo.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;  /* This creates parallax! */
-    height: 100vh;
-    display: flex;
-    flex-direction: column;  /* make items stack vertically */
-    align-items: center;  /* centers horizontally */
-    justify-content: flex-start;  /* aligns to top */
-    padding-top: 6vh;
-    text-align: center;
-    color: white;
-    /* position: relative; */
-    overflow: hidden; /*snowflakes pass through instead of stopping */
-}
-
-.hero-content {
-    /* display: none; */
-    max-width: 30%;
-    /* padding: 2rem; */
-    /* background: rgba(10, 22, 40, 0.7); */
-    margin-top: 6rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(216, 246, 255, 0.3);
-    box-shadow: 0 0 30px rgba(119, 212, 255, 0.3);
-}
-
-.hero-logo {
-    /* display: block; */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1.5rem;
-    height: 40vh;
-}
-
-.hero h1 {
-    font-family: 'MedievalSharp', 'Papyrus', cursive;
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 3px 3px 6px rgba(0,0,0,0.8);
-    color: #d4af37;
-    font-weight: bold;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    color: #fff8e7;
-}
+/* Hero Section: see "v2 components" at the end of this file */
 
 
 /* Container */
@@ -170,164 +143,25 @@ nav a:hover {
     padding: 4rem 2rem;
 }
 
-/* Story Section */
-.story-section {
-    margin-bottom: 3rem;
-}
-
-.story-section, .gallery {
-    background: linear-gradient(135deg, #0a1a2e 50%, #16213e 100%);
-}
-
-.story-content {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 3rem;
-    align-items: center;
-
-}
-
-.large-text {
-    font-family: 'MedievalSharp', 'Papyrus', cursive;
-    font-size: 2rem;
-}
-
-.story-text, .location {
+/* Location text (old) */
+.location {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #fff8e7;
 }
 
-.story-text h2 {
-    font-family: 'MedievalSharp', 'Papyrus', cursive;
-    color: #d4af37;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
-}
-
-.story-text p, .location p {
+.location p {
     margin-bottom: 0.5rem;
 }
 
-.story-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-    border: 4px double #d4af37;
-    position: relative;
-}
-
-.story-image-character {
-    height: 400px;
-        /* filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.8))
-            drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.8)); */
-}
-
-.story-image::before,
-.story-image::after {
-    content: '❋';
-    position: absolute;
-    color: #d4af37;
-    font-size: 1.8rem;
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
-    z-index: 1;
-}
-
-.story-image::before {
-    top: -12px;
-    left: -12px;
-}
-
-.story-image::after {
-    bottom: -12px;
-    right: -12px;
-}
-
-/* CTA Buttons Section */
-.cta-section {
-    text-align: center;
-    /* background: linear-gradient(to bottom, #2d0a14 0%, #4a1625 100%); */
-}
-
-.cta-section h2 {
-    font-family: 'MedievalSharp', 'Papyrus', cursive;
-    color: #d4af37;
-    font-size: 2.5rem;
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
-}
-
-.cta-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.cta-card {
-    background: linear-gradient(135deg, #a30822 0%, #680512 100%);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(139, 30, 63, 0.3);
-    transition: all 0.3s;
-    text-decoration: none;
-    color: #fff8e7;
-    display: block;
-    border: 3px double rgba(212, 175, 55, 0.5);
-    position: relative;
-}
-
-.cta-card::before,
-.cta-card::after {
-    content: '✧';
-    position: absolute;
-    color: #d4af37;
-    font-size: 1.5rem;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
-    opacity: 0.7;
-    transition: all 0.3s;
-}
-
-.cta-card::before {
-    top: -10px;
-    left: -10px;
-}
-
-.cta-card::after {
-    bottom: -10px;
-    right: -10px;
-}
-
-.cta-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(121, 4, 29, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
-    border-color: #d4af37;
-    background: linear-gradient(135deg, #a30822 0%, #680512 100%);
-}
-
-.cta-card:hover::before,
-.cta-card:hover::after {
-    opacity: 1;
-    text-shadow: 0 0 15px rgba(212, 175, 55, 1);
-}
-
-.cta-card h3 {
-    font-family: 'MedievalSharp', 'Papyrus', cursive;
-    color: #ffffff;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-/* Testimonials */
-.testimonials, .location {
+/* Location background (old) */
+.location {
     /* background: linear-gradient(135deg, #0d1b1e 0%, #1a2847 100%); */
     background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
     color: #fff8e7;
 }
 
-.testimonials h2, .location h2, .gallery h2, .contact h2, .booking h2, .video h2 {
+.location h2, .contact h2, .booking h2 {
     font-family: 'MedievalSharp', 'Papyrus', cursive;
     text-align: center;
     margin-bottom: 3rem;
@@ -340,57 +174,6 @@ nav a:hover {
 
     margin-top: 5rem;
 }
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.testimonial {
-    /* background: rgba(26, 40, 71, 0.4); */
-    background: linear-gradient(135deg, #145232 25%, #04311b 100%);
-    /* background: linear-gradient(135deg, #2fc3f0 0%, #0d689c 100%); */
-    /* background: linear-gradient(135deg, #174c91 0%, #051b4d 100%); */
-
-    padding: 2rem;
-    border-radius: 12px;
-    border-left: 4px solid #d4af37;
-    backdrop-filter: blur(10px);
-    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.1);
-}
-
-.testimonial p {
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #fff8e7;
-}
-
-/* Gallery */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-}
-
-.gallery img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: all 0.3s;
-    border: 3px double rgba(212, 175, 55, 0.4);
-    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3);
-}
-
-/* .gallery img:hover {
-    transform: scale(1.05);
-    border-color: #d4af37;
-    box-shadow: 
-        0 0 0 1px #d4af37,
-        0 0 20px rgba(212, 175, 55, 0.5);
-} */
 
 /* Button */
 .btn {
@@ -639,16 +422,6 @@ nav a:hover {
 }
 
 
-.video img {
-
-    width: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: all 0.3s;
-    border: 3px double rgba(212, 175, 55, 0.4);
-    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3);
-}
-
 /* Footer */
 footer {
     background: #050d14;
@@ -701,13 +474,6 @@ a[href^="mailto:"]:hover {
         transform: translateY(110vh) translateX(50px) rotate(360deg);
     }
 }
-
-.hero {
-    position: relative;
-    overflow: hidden; /* keeps snowflakes inside hero section */
-}
-
-
 
 /* Page Hero Section (for story.html and activities.html) */
 .page-hero {
@@ -809,12 +575,6 @@ a[href^="mailto:"]:hover {
 }
 
 
-.video-iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9; /* Standard YouTube ratio */
-}
-
-
 /* Footer mailto link */
 footer a[href^="mailto:"] {
     display: block;
@@ -833,7 +593,7 @@ footer a[href^="mailto:"]:hover {
 
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
     .hamburger {
         display: flex;
     }
@@ -872,20 +632,805 @@ footer a[href^="mailto:"]:hover {
     .hamburger.active span:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+}
 
-    .hero h1 {
-        font-size: 2rem;
+
+/* ============================================================
+   v2 components, written mobile first.
+   Everything above this line is still the old desktop-first CSS
+   and gets converted section by section as we rebuild the page.
+   ============================================================ */
+
+/* Header: menu toggle gets a finger-sized tap area without moving visually */
+.hamburger {
+    padding: 10px;
+    margin: -10px;
+}
+
+/* Header: larger logo from tablet up */
+@media (min-width: 768px) {
+    .logo img {
+        height: 60px;
+    }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: calc(100vh - var(--header-h));
+    min-height: calc(100svh - var(--header-h));
+    overflow: hidden;
+    text-align: center;
+    color: var(--cream);
+}
+
+.hero-media {
+    position: absolute;
+    inset: 0;
+    background-image: url('images/bootcamp/sg_bokun_1.jpeg');
+    background-size: cover;
+    background-position: 34% center;
+}
+
+.hero-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(6, 14, 26, 0.62) 0%,
+        rgba(6, 14, 26, 0.22) 28%,
+        rgba(6, 14, 26, 0.78) 64%,
+        rgba(10, 22, 40, 0.97) 100%);
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 2rem var(--pad-x) 2.25rem;
+}
+
+.hero-badge {
+    display: block;
+    /* Scales with screen height so short phones keep the photo visible */
+    height: clamp(80px, 14vh, 130px);
+    width: auto;
+    margin: 0 auto 0.9rem;
+    /* Dark halo just outside the logo's white glow so it reads on snow too */
+    filter: drop-shadow(0 0 14px rgba(6, 14, 26, 0.85)) drop-shadow(0 3px 10px rgba(0, 0, 0, 0.55));
+}
+
+.hero h1 {
+    font-family: 'MedievalSharp', 'Papyrus', cursive;
+    font-size: clamp(2rem, 8.8vw, 3.4rem);
+    line-height: 1.08;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+    text-shadow: 0 0 18px rgba(212, 175, 55, 0.45), 0 2px 12px rgba(0, 0, 0, 0.9);
+}
+
+.hero-sub {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 34rem;
+    margin: 0 auto 1.15rem;
+    color: var(--cream);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+}
+
+.hero-facts {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.45rem;
+    margin: 0 auto 1.4rem;
+}
+
+.hero-facts li {
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 999px;
+    background: rgba(10, 22, 40, 0.5);
+    color: var(--gold-soft);
+    white-space: nowrap;
+}
+
+.hero-note {
+    margin-top: 0.85rem;
+    font-size: 0.82rem;
+    color: rgba(244, 228, 193, 0.82);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+@media (min-width: 768px) {
+    .hero {
+        align-items: center;
     }
 
-    .hero p {
+    /* Wide screens get the shot with people on both edges and an
+       empty snow corridor down the middle, so the text lands on snow
+       instead of on someone's face. */
+    .hero-media {
+        background-image: url('images/bootcamp/sg_bokun_5.jpeg');
+        background-position: center;
+    }
+
+    .hero-media::after {
+        background:
+            radial-gradient(ellipse 62% 74% at 50% 46%,
+                rgba(6, 14, 26, 0.82) 0%,
+                rgba(6, 14, 26, 0.50) 55%,
+                rgba(6, 14, 26, 0.08) 100%),
+            linear-gradient(to bottom,
+                rgba(6, 14, 26, 0.45) 0%,
+                rgba(6, 14, 26, 0.05) 22%,
+                rgba(6, 14, 26, 0.30) 72%,
+                rgba(10, 22, 40, 0.95) 100%);
+    }
+
+    .hero-inner {
+        padding: 3rem var(--pad-x);
+    }
+
+    .hero-badge {
+        height: clamp(110px, 17vh, 175px);
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-sub {
+        font-size: 1.22rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .hero-facts {
+        gap: 0.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-facts li {
+        font-size: 0.95rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .hero-note {
+        font-size: 0.95rem;
+    }
+}
+
+/* ---------- Primary booking button ---------- */
+.btn-book {
+    display: block;
+    width: 100%;
+    max-width: 20rem;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    line-height: 1.2;
+    font-size: 1.3rem;
+}
+
+.btn-price {
+    display: block;
+    margin-top: 0.2rem;
+    font-family: 'Lato', 'Segoe UI', Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    opacity: 0.92;
+    text-shadow: none;
+}
+
+@media (min-width: 768px) {
+    .btn-book {
+        max-width: 24rem;
+        padding: 1.1rem 2rem;
+        font-size: 1.5rem;
+    }
+
+    .btn-price {
+        font-size: 0.9rem;
+    }
+}
+
+/* ---------- Booking section ---------- */
+.booking {
+    background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 100%);
+}
+
+.booking-inner {
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.booking-inner h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.9rem, 7vw, 2.5rem);
+}
+
+.booking-lead {
+    font-size: 1.05rem;
+    color: var(--gold-soft);
+    max-width: 32rem;
+    margin: 0 auto 1.75rem;
+}
+
+.booking-prices {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin: -0.5rem auto 1.5rem;
+    font-size: 1rem;
+    color: var(--gold-soft);
+}
+
+.booking-prices strong {
+    font-family: 'MedievalSharp', 'Papyrus', cursive;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-right: 0.2rem;
+}
+
+.booking-note {
+    margin: 1rem auto 0;
+    max-width: 32rem;
+    font-size: 0.88rem;
+    color: rgba(244, 228, 193, 0.75);
+}
+
+.booking-facts {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    max-width: 40rem;
+    margin: 2.5rem auto 0;
+}
+
+.booking-facts li {
+    padding: 0.9rem 0.5rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    background: rgba(10, 22, 40, 0.45);
+}
+
+.booking-facts strong {
+    display: block;
+    font-family: 'MedievalSharp', 'Papyrus', cursive;
+    font-size: 1.05rem;
+    color: var(--gold);
+}
+
+.booking-facts span {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(244, 228, 193, 0.8);
+}
+
+@media (min-width: 768px) {
+    .booking-inner {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .booking-lead {
         font-size: 1.2rem;
     }
 
-    .story-content {
-        grid-template-columns: 1fr;
+    .booking-facts {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
     }
 
-    .cta-grid {
+    .booking-facts strong {
+        font-size: 1.2rem;
+    }
+
+    .booking-facts span {
+        font-size: 0.9rem;
+    }
+}
+
+/* ---------- Showcase: photos + video ---------- */
+.showcase {
+    background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 100%);
+    scroll-margin-top: calc(var(--header-h) + 12px);
+}
+
+.showcase-inner {
+    padding-top: 2.75rem;
+    padding-bottom: 3rem;
+    padding-left: var(--pad-x);
+    padding-right: var(--pad-x);
+}
+
+.showcase h2 {
+    text-align: center;
+    font-size: clamp(1.9rem, 7vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+}
+
+.section-lead {
+    text-align: center;
+    color: var(--gold-soft);
+    font-size: 1rem;
+    max-width: 34rem;
+    margin: 0 auto 1.5rem;
+}
+
+/* Mobile: one wide photo, then two columns */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    background: var(--navy-700);
+}
+
+.photo--big {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 10;
+}
+
+.video-block {
+    margin-top: 2.5rem;
+}
+
+.video-block h3 {
+    text-align: center;
+    font-size: clamp(1.4rem, 5.5vw, 1.9rem);
+    margin-bottom: 1rem;
+}
+
+.video-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    background: #000;
+}
+
+.video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (min-width: 768px) {
+    .showcase-inner {
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+    }
+
+    .section-lead {
+        font-size: 1.2rem;
+        margin-bottom: 2.25rem;
+    }
+
+    /* Desktop: big photo takes a 2x2 block, four photos fill the rest */
+    .photo-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
+    }
+
+    .photo {
+        aspect-ratio: 4 / 3;
+    }
+
+    .photo--big {
+        grid-column: span 2;
+        grid-row: span 2;
+        aspect-ratio: auto;
+    }
+
+    .video-block {
+        max-width: 860px;
+        margin: 4rem auto 0;
+    }
+}
+
+/* ---------- How it works ---------- */
+.how {
+    background: linear-gradient(180deg, var(--navy-800) 0%, var(--navy-700) 100%);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.how-inner {
+    padding: 3rem var(--pad-x);
+}
+
+.how h2 {
+    text-align: center;
+    font-size: clamp(1.9rem, 7vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+}
+
+/* Mobile: vertical timeline with a thin gold line joining the numbers */
+.steps {
+    list-style: none;
+    position: relative;
+    max-width: 34rem;
+    margin: 0 auto;
+}
+
+.step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    padding-bottom: 1.75rem;
+}
+
+.step:last-child {
+    padding-bottom: 0;
+}
+
+.step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    top: 3rem;
+    bottom: 0.25rem;
+    width: 1px;
+    background: linear-gradient(to bottom, rgba(212, 175, 55, 0.6), rgba(212, 175, 55, 0.1));
+}
+
+.step-num {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: radial-gradient(circle at 35% 30%, var(--red) 0%, var(--red-dark) 100%);
+    color: #fff;
+    font-family: 'MedievalSharp', 'Papyrus', cursive;
+    font-size: 1.4rem;
+    line-height: 1;
+    box-shadow: 0 0 14px rgba(212, 175, 55, 0.35);
+}
+
+.step-body h3 {
+    font-size: 1.35rem;
+    line-height: 1.2;
+    margin: 0.55rem 0 0.35rem;
+}
+
+.step-body p {
+    color: var(--cream);
+    font-size: 0.98rem;
+    line-height: 1.55;
+}
+
+@media (min-width: 768px) {
+    .how-inner {
+        padding: 4.5rem var(--pad-x);
+    }
+
+    /* Desktop: three columns, numbers on top, line runs across */
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        max-width: none;
+    }
+
+    .step {
         grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        padding-bottom: 0;
+    }
+
+    .step:not(:last-child)::before {
+        left: calc(50% + 2.25rem);
+        right: calc(-2.5rem - 50% + 2.25rem);
+        top: 1.75rem;
+        bottom: auto;
+        width: auto;
+        height: 1px;
+        background: linear-gradient(to right, rgba(212, 175, 55, 0.6), rgba(212, 175, 55, 0.15));
+    }
+
+    .step-num {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.6rem;
+    }
+
+    .step-body h3 {
+        font-size: 1.5rem;
+    }
+
+    .step-body p {
+        font-size: 1.05rem;
+    }
+}
+
+/* ---------- Reviews ---------- */
+.reviews-section {
+    background: linear-gradient(180deg, var(--navy-700) 0%, var(--navy-800) 100%);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.reviews-inner {
+    padding: 3rem var(--pad-x);
+}
+
+.reviews-section h2 {
+    text-align: center;
+    font-size: clamp(1.9rem, 7vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+}
+
+/* CSS columns give a simple masonry: 1 column on phones, more on wider screens */
+.reviews {
+    columns: 1;
+    column-gap: 1.25rem;
+    max-width: 34rem;
+    margin: 0 auto;
+}
+
+.review {
+    position: relative;
+    break-inside: avoid;
+    margin: 0 0 0.85rem;
+    padding: 1.1rem 1.15rem 1.1rem 3rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #145232 0%, #04311b 100%);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.review::before {
+    content: '\201C';
+    position: absolute;
+    left: 0.7rem;
+    top: 0.35rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.85;
+}
+
+.review p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--cream);
+}
+
+.review-author {
+    margin-top: 0.6rem;
+    font-size: 0.88rem;
+    color: rgba(244, 228, 193, 0.8);
+}
+
+.review-author strong {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .reviews-inner {
+        padding: 4.5rem var(--pad-x);
+    }
+
+    .reviews {
+        columns: 2;
+        max-width: none;
+    }
+
+    .review {
+        margin-bottom: 1.25rem;
+        padding: 1.4rem 1.4rem 1.4rem 3.4rem;
+    }
+
+    .review p {
+        font-size: 1.08rem;
+    }
+}
+
+/* ---------- FAQ (native details/summary, no JavaScript) ---------- */
+.faq-section {
+    background: linear-gradient(180deg, var(--navy-800) 0%, var(--navy-900) 100%);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.faq-inner {
+    padding: 3rem var(--pad-x);
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: clamp(1.9rem, 7vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+}
+
+.faq {
+    max-width: 44rem;
+    margin: 0 auto;
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3.25rem;
+    padding: 0.8rem 0.25rem;
+    font-weight: 700;
+    font-size: 1.02rem;
+    line-height: 1.35;
+    color: var(--gold-soft);
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    flex-shrink: 0;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--gold);
+    transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item summary:hover {
+    color: var(--gold);
+}
+
+.faq-item summary:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.faq-answer {
+    padding: 0 0.25rem 1.1rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--cream);
+}
+
+.faq-answer a,
+.faq-more a {
+    color: var(--gold);
+}
+
+.faq-more {
+    text-align: center;
+    margin-top: 1.75rem;
+    color: var(--gold-soft);
+}
+
+@media (min-width: 768px) {
+    .faq-inner {
+        padding: 4.5rem var(--pad-x);
+    }
+
+    .faq-item summary {
+        font-size: 1.15rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .faq-answer {
+        font-size: 1.05rem;
+        padding: 0 0.5rem 1.25rem;
+    }
+}
+
+/* ---------- Lore (short story teaser) ---------- */
+.lore {
+    background: linear-gradient(135deg, #0a1a2e 40%, #16213e 100%);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    overflow: hidden;
+}
+
+/* Mobile: text on the left, a slim knight on the right */
+.lore-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem var(--pad-x);
+}
+
+.lore h2 {
+    font-size: clamp(1.9rem, 7vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 0.9rem;
+}
+
+.lore-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+}
+
+.lore-link {
+    display: inline-block;
+    margin-top: 0.35rem;
+    padding: 0.5rem 0;
+    font-family: 'MedievalSharp', 'Papyrus', cursive;
+    font-size: 1.1rem;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+}
+
+.lore-link::after {
+    content: ' \203A';
+}
+
+.lore-link:hover,
+.lore-link:focus-visible {
+    color: var(--gold-soft);
+    border-bottom-color: var(--gold-soft);
+}
+
+.lore-knight {
+    display: block;
+    height: 220px;
+    width: auto;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55));
+}
+
+@media (min-width: 768px) {
+    .lore-inner {
+        grid-template-columns: minmax(0, 36rem) auto;
+        justify-content: center;
+        gap: 4rem;
+        padding: 4.5rem var(--pad-x);
+    }
+
+    .lore-text p {
+        font-size: 1.15rem;
+    }
+
+    .lore-link {
+        font-size: 1.25rem;
+    }
+
+    .lore-knight {
+        height: 340px;
     }
 }

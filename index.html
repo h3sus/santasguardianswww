@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santa's Guardians - Elf Fighting Boot Camp in Rovaniemi</title>
+    <title>Elf Fighting Boot Camp in Rovaniemi | Santa's Guardians</title>
+    <meta name="description" content="Fight like your favorite movie heroes. A one-hour Elf Fighting boot camp in a snowy forest 5 minutes from SantaPark, Rovaniemi. Padded swords, shields and bows, all gear included, no experience needed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.santasguardians.com/">
+    <meta property="og:title" content="Elf Fighting Boot Camp in Rovaniemi | Santa's Guardians">
+    <meta property="og:description" content="Padded swords, shields and bows in a snowy Lapland forest. One hour, ages 12+, all gear included.">
+    <meta property="og:image" content="https://www.santasguardians.com/images/bootcamp/sg_bokun_1.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,7 +20,7 @@
             <div class="logo">
                 <a href="#home">
                     <img src="images/site-logo.png" alt="Santa's Guardians Logo" />
-                    <h1>Santa's Guardians</h1>
+                    <span class="logo-text">Santa's Guardians</span>
                 </a>
             </div>
             <div class="hamburger" onclick="toggleMenu()">
@@ -26,7 +33,7 @@
                 <li><a href="story.html" onclick="closeMenu()">Story</a></li>
                 <li><a href="activities.html" onclick="closeMenu()">Activities</a></li>
                 <li><a href="#location" onclick="closeMenu()">Location</a></li>
-                <li><a href="#booking" target="_blank" onclick="closeMenu()">Book Now</a></li>
+                <li><a href="#booking" onclick="closeMenu()">Book Now</a></li>
                 <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             </ul>
         </nav>
@@ -34,112 +41,208 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <img src="images/hero-logo.png"class="hero-logo" />
-        <div class="hero-content">
-            <a href="#booking" class="btn">Book Your Adventure</a>
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-inner">
+            <img src="images/hero-logo-red-shine-small.png" alt="" class="hero-badge" width="320" height="320" />
+            <h1>Fight like your favorite movie heroes</h1>
+            <p class="hero-sub">An Elf Fighting boot camp in a snowy forest just outside Rovaniemi. Help us keep Christmas safe from the naughty ones with padded swords, shields and bows. All gear included, no experience needed.</p>
+            <ul class="hero-facts">
+                <li>1 hour</li>
+                <li>Ages 12+</li>
+                <li>4&ndash;8 people</li>
+                <li>5 min from SantaPark</li>
+            </ul>
+            <a href="#booking" class="btn btn-book">
+                Book now
+                <span class="btn-price">from 40&nbsp;&euro; per person</span>
+            </a>
+            <p class="hero-note">Guided in English and Finnish</p>
         </div>
     </section>
 
-    <!-- Story Section -->
-    <section class="story-section" id="story">
-        <div class="container">
-            <div class="story-content">
-                <div class="story-text">
-                    <h2>Join the Ranks</h2>
-                    <!-- <p class="large-text">What if you could fight like a medieval fantasy warrior without having to worry about hurting yourself or others? Come and find out!</p> -->
-                    <p>We train fighter elves. Why?</p>
-                    <p>Because, when the world was young, trolls invaded Santa's realm, Lapland. The best and bravest of Santa's elves were sent against them. They were victorious, and began to be known as Santa's Guardians.</p>
-                    <p>Now, centuries later, trolls have been sighted in Santa's hometown Rovaniemi again, but the elves are ready to train more Guardians for Santa.</p>
-                    <p>All they need is fresh recruits!</p>
+    <!-- Showcase: real photos + video -->
+    <section class="showcase" id="gallery">
+        <div class="container showcase-inner">
+            <h2>See it in action</h2>
+            <p class="section-lead">Real recruits, real snow. Real heroes in the making.</p>
+
+            <div class="photo-grid">
+                <img class="photo photo--big" src="images/bootcamp/sg_bokun_3.jpeg" width="1368" height="768" loading="lazy" decoding="async"
+                     alt="Recruits in Santa hats and helmets duel with padded swords and shields in a snowy forest">
+                <img class="photo" src="images/bootcamp/sg_bokun_4.jpeg" width="1368" height="768" loading="lazy" decoding="async"
+                     style="object-position: 52% 30%;"
+                     alt="Three laughing recruits in helmets and Santa hats holding padded weapons">
+                <img class="photo" src="images/bootcamp/sg_bokun_2.jpeg" width="1368" height="768" loading="lazy" decoding="async"
+                     style="object-position: 30% 40%;"
+                     alt="A recruit with a shield watches the group train in the snow">
+                <img class="photo" src="images/bootcamp/sg_bokun_5.jpeg" width="1368" height="768" loading="lazy" decoding="async"
+                     style="object-position: 22% 50%;"
+                     alt="A recruit with a round shield charges across a snowy forest path">
+                <img class="photo" src="images/bootcamp/sg_bokun_1.jpeg" width="1368" height="768" loading="lazy" decoding="async"
+                     style="object-position: 28% 35%;"
+                     alt="A smiling recruit holds a bow while others spar in the background">
+            </div>
+
+            <div class="video-block">
+                <h3>Hear it from our recruits</h3>
+                <div class="video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/2gXKumD_7nY" title="Elf Fighting boot camp reviews" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
-                <img src="images/elf-knight-front.png" alt="Santa's Guardians' Elf Knight" class="story-image-character">
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="book">
-        <div class="container">
-            <h2>Start Your Adventure Here</h2>
-            <div class="cta-grid">
-                <a href="story.html" class="cta-card">
-                    <h3>📖 Story</h3>
-                    <p>Read more about the history of how the Guardians came to be</p>
-                </a>
-                <a href="#location" class="cta-card">
-                    <h3>📍 Location</h3>
-                    <p>Find out where we are located and how to reach us in Rovaniemi</p>
-                </a>
-                <a href="#booking" target="_blank" class="cta-card">
-                    <h3>⚔️ Book Now</h3>
-                    <p>Book a training session with the Guardians</p>
-                </a>
-                <a href="#contact" class="cta-card">
-                    <h3>✉️ Contact Us</h3>
-                    <p>Contact us for more information</p>
-                </a>
+    <!-- How it works -->
+    <section class="how" id="how-it-works">
+        <div class="container how-inner">
+            <h2>Your hour as a Guardian</h2>
+            <p class="section-lead">Three stages, all gear included, no experience needed.</p>
+
+            <ol class="steps">
+                <li class="step">
+                    <span class="step-num" aria-hidden="true">1</span>
+                    <div class="step-body">
+                        <h3>Gear up</h3>
+                        <p>We meet you near SantaPark and walk to the forest together. Helmets and padded weapons are waiting, and the rules take just a few minutes to learn.</p>
+                    </div>
+                </li>
+                <li class="step">
+                    <span class="step-num" aria-hidden="true">2</span>
+                    <div class="step-body">
+                        <h3>Train like an elf</h3>
+                        <p>Try sword and shield, two-handed weapons, throwing spears and bows. You set your own pace, from gentle to all in.</p>
+                    </div>
+                </li>
+                <li class="step">
+                    <span class="step-num" aria-hidden="true">3</span>
+                    <div class="step-body">
+                        <h3>Battle it out</h3>
+                        <p>Put your new skills to the test in team games like capture the flag and king of the hill. Snacks and drinks for brave elves are included.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews-section" id="reviews">
+        <div class="container reviews-inner">
+            <h2>What our recruits say</h2>
+            <p class="section-lead">Straight from guests who joined a boot camp.</p>
+            <div class="reviews">
+                <figure class="review">
+                    <blockquote><p>Super fun!!! Active, would be great for team bonding! My favourite part of the trip, great hosts.</p></blockquote>
+                    <figcaption class="review-author"><strong>Katie</strong>, Scotland</figcaption>
+                </figure>
+                <figure class="review">
+                    <blockquote><p>I'm not a sporty type but that was definitely fun anyways. I really liked the amount of different toy weapons we were able to use and also different stages of battles.</p></blockquote>
+                    <figcaption class="review-author"><strong>Inna</strong>, Germany</figcaption>
+                </figure>
+                <figure class="review">
+                    <blockquote><p>It is definitely something different compared to the usual activities. At first I felt a little weird fighting but then I had so much fun! It was nice to be able to play. It had been a long time since childhood.</p></blockquote>
+                    <figcaption class="review-author"><strong>Maria</strong>, Germany</figcaption>
+                </figure>
+                <figure class="review">
+                    <blockquote><p>It was cool because especially as a girl I have never fought with weapons in my childhood.</p></blockquote>
+                    <figcaption class="review-author"><strong>Raffaela</strong>, Germany</figcaption>
+                </figure>
+                <figure class="review">
+                    <blockquote><p>I really liked it, it was like going back to my childhood.</p></blockquote>
+                    <figcaption class="review-author"><strong>Rinaldo</strong>, Hungary</figcaption>
+                </figure>
             </div>
         </div>
     </section>
 
-
-    <!-- Video -->
-    <section class="video">
-        <!-- <h2>Videos</h2> -->
-        <div class="container">
-            <iframe class="video-iframe" src="https://www.youtube.com/embed/2gXKumD_7nY?si=E5j_Vc6D7gc7CY5-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </section>
-
-
-    <!-- Gallery 
-    <section class="gallery">
-        <div class="container">
-            <div class="gallery-grid">
-                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_32-2048x1150.jpg" alt="Smiling Elf Fighting Bootcamp participants">
-                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_24-1024x575.jpg" alt="Guardian in training gear" style="object-position: 10%;">
-                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_20-1024x575.jpg" alt="Elf Fighting with bow" style="object-position: 5%;">
-                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_17-1024x575.jpg" alt="Group combat training" style="object-position: 65%;">
-                <img src="https://www.santasguardians.com/wp-content/uploads/2025/10/Santa_s_Guardians_14-2048x1150.jpg" alt="Elf Fighters engaging in combat with padded weapons">
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container faq-inner">
+            <h2>Good to know</h2>
+            <p class="section-lead">Quick answers to what people usually ask before booking.</p>
+            <div class="faq">
+                <details class="faq-item" name="faq">
+                    <summary>Is it safe?</summary>
+                    <p class="faq-answer">Yes. The weapons are lightweight and padded, and everyone wears a helmet that protects the head and face. Like in any sport, the worst that usually happens is a small bruise or a twisted ankle. We have extra insurance for participants, but please have your own insurance in order too.</p>
+                </details>
+                <details class="faq-item" name="faq">
+                    <summary>Do I need to be fit or sporty?</summary>
+                    <p class="faq-answer">No. You set your own pace and can take it easy or go all in. Anyone who would rather stay out of the wildest battles can take another role, such as referee or a VIP to protect, so everyone gets to join.</p>
+                </details>
+                <details class="faq-item" name="faq">
+                    <summary>Who can join?</summary>
+                    <p class="faq-answer">The minimum age is 12, and we recommend that young fighters have an adult with them. There is no upper age limit. Each boot camp is for 4&ndash;8 people. If someone in your group has a disability or physical limitation, <a href="#contact">contact us in advance</a> and we will see what we can do.</p>
+                </details>
+                <details class="faq-item" name="faq">
+                    <summary>What should I wear?</summary>
+                    <p class="faq-answer">Clothes that suit the current weather. We provide all the equipment. You will probably get sweaty, so it is a good idea to plan time for a sauna or shower afterwards.</p>
+                </details>
+                <details class="faq-item" name="faq">
+                    <summary>What if the weather is bad?</summary>
+                    <p class="faq-answer">Everything happens outdoors. It needs to be very rainy or extremely cold before we cancel. The Guardians are quite tough like that.</p>
+                </details>
+                <details class="faq-item" name="faq">
+                    <summary>Do we have to act or be in character?</summary>
+                    <p class="faq-answer">No, unless you want to. Come as you are. The main thing is to enjoy moving and playing together. If you feel like getting into character, go for it, just be nice to others and play by the rules.</p>
+                </details>
+                <details class="faq-item" name="faq">
+                    <summary>Where do we meet?</summary>
+                    <p class="faq-answer">We come and escort you 10 minutes before your session from the SantaPark bus stop or Hostel Ibedcity. It is a 5-minute walk from both. You choose your pickup spot when booking. <a href="#location">See the map</a>.</p>
+                </details>
+                <details class="faq-item" name="faq">
+                    <summary>Can I cancel my booking?</summary>
+                    <p class="faq-answer">Bookings are non-refundable and all sales are final.</p>
+                </details>
             </div>
+            <p class="faq-more">Something else on your mind? <a href="#contact">Send us a message</a>.</p>
         </div>
     </section>
-    -->
+
+    <!-- Lore -->
+    <section class="lore" id="story">
+        <div class="container lore-inner">
+            <div class="lore-text">
+                <h2>Join the Ranks</h2>
+                <p>When the world was young, trolls invaded Lapland. Santa's bravest elves drove them back and became known as Santa's Guardians.</p>
+                <p>Now trolls have been sighted in Santa's hometown, Rovaniemi, once again. The Guardians need fresh recruits. That means you.</p>
+                <a class="lore-link" href="story.html">Read the full legend</a>
+            </div>
+            <img class="lore-knight" src="images/elf-knight-front.png" width="308" height="736" loading="lazy" decoding="async"
+                 alt="An elf knight of Santa's Guardians in a red and white coat, resting on a sword">
+        </div>
+    </section>
 
     <!-- Booking -->
-    <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=227df132-3bae-462d-9dc4-7c5348d81248" async></script>
+    <!--
+      PLACEHOLDER BOOKING CTA.
+      When Bokun bookings are switched on:
+        1. paste Bokun's loader <script> back in, right above this section
+        2. replace the <a class="btn btn-book"> below with Bokun's Booking button snippet
+        3. keep class="btn btn-book" on Bokun's button so it inherits the site styling
+        4. delete the .booking-note paragraph
+      Booking channel UUID : 227df132-3bae-462d-9dc4-7c5348d81248
+      Experience id        : 1103047
+    -->
     <section class="booking" id="booking">
-         <h2>Book Now</h2>
-        <div class="container" >
-            <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/227df132-3bae-462d-9dc4-7c5348d81248/experience/1103047"></div>
-            <!-- <noscript>Please enable javascript in your browser to book</noscript> -->
-    </section>
-
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>Testimonials</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p>"I'm not a sporty type but that was definitely fun anyways. I really liked the amount of different toy weapons we were able to use and also different stages of battles."</p>
-                </div>
-                <div class="testimonial">
-                    <p>"Super fun!!! Active, would be great for team bonding! My favorite part of the trip, great hosts."</p>
-                </div>
-                <div class="testimonial">
-                    <p>"I really liked it, it was like going back to my childhood."</p>
-                </div>
-                <div class="testimonial">
-                    <p>"It was cool because especially as a girl I have never fought with weapons in my childhood."</p>
-                </div>
-                <div class="testimonial">
-                    <p>"At first I felt a little weird fighting but then I had so much fun! It was nice to be able to play. It had been a long time since childhood."</p>
-                </div>
-                <div class="testimonial">
-                    <p>"It is definitely something different compared to the usual activities."</p>
-                </div>
-            </div>
+        <div class="container booking-inner">
+            <h2>Book your boot camp</h2>
+            <p class="booking-lead">Pick a date and a time and you are in. It takes about a minute.</p>
+            <p class="booking-prices">
+                <span><strong>50&nbsp;&euro;</strong> adults</span>
+                <span><strong>40&nbsp;&euro;</strong> children</span>
+            </p>
+            <a class="btn btn-book" href="#contact">
+                Book now
+                <span class="btn-price">from 40&nbsp;&euro; per person</span>
+            </a>
+            <p class="booking-note">Online booking opens shortly. Until then, send us a message and we will confirm your slot by email.</p>
+            <ul class="booking-facts">
+                <li><strong>1 hour</strong><span>training and games</span></li>
+                <li><strong>4&ndash;8 people</strong><span>per boot camp</span></li>
+                <li><strong>Ages 12+</strong><span>no experience needed</span></li>
+                <li><strong>All gear</strong><span>included in the price</span></li>
+            </ul>
         </div>
     </section>
 
