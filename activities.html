@@ -3,40 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activities - Santa's Guardians</title>
+    <title>What Happens at an Elf Fighting Boot Camp | Santa's Guardians</title>
+    <meta name="description" content="Learn to fight like an elf with padded swords, shields, spears and bows, then play team games in a snowy Rovaniemi forest. Ages 12+, 4&ndash;8 people, all gear included.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.santasguardians.com/activities.html">
+    <meta property="og:title" content="What Happens at an Elf Fighting Boot Camp | Santa's Guardians">
+    <meta property="og:description" content="Padded weapons, team games and a snowy Lapland forest. Ages 12+, all gear included.">
+    <meta property="og:image" content="https://www.santasguardians.com/images/bootcamp/sg_bokun_3.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <nav>
+        <nav aria-label="Main">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/site-logo.png" alt="Santa's Guardians Logo" />
-                    <h1>Santa's Guardians</h1>
+                    <img src="images/site-logo.png" alt="Santa&#39;s Guardians home" />
+                    <span class="logo-text">Santa&#39;s Guardians</span>
                 </a>
             </div>
-            <div class="hamburger" onclick="toggleMenu()">
+            <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <ul id="navMenu">
-                <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                <li><a href="story.html" onclick="closeMenu()">Story</a></li>
-                <li><a href="activities.html" onclick="closeMenu()">Activities</a></li>
-                <li><a href="#location" onclick="closeMenu()">Location</a></li>
-                <li><a href="index.html#booking" target="_blank" onclick="closeMenu()">Book Now</a></li>
-                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                <li><a href="index.html#how-it-works">How it works</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#location">Location</a></li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="activities.html" aria-current="page">Activities</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="nav-cta"><a class="nav-book" href="index.html#booking">Book now</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
-        <div class="container">
-            <h2>How to Fight Like an Elf?</h2>
-            <p class="hero-subtitle">Read more about what Santa's Guardians do, and what makes it the most fun experience you can have.</p>
+    <!-- Hero: real photo -->
+    <section class="sub-hero">
+        <div class="sub-hero-art sub-hero-art--activities" role="img"
+             aria-label="Recruits in Santa hats and helmets duel with padded swords and shields in a snowy forest"></div>
+        <div class="sub-hero-text">
+            <h1>How to Fight Like an Elf</h1>
+            <p class="hero-subtitle">What Elf Fighting is, what you will do, and why it is so much fun.</p>
         </div>
     </section>
 
@@ -47,68 +57,94 @@
                 <p class="intro-text">Santa's Guardians are the protectors of Christmas, punishers of the naughty ones! And they are recruiting. As the story goes, for centuries the Guardians have specialized in fighting their biggest and naughtiest enemies, trolls, with medieval weapons to protect Christmas and all that is good. Santa wants you!</p>
 
                 <h3>Be the Hero of Your Childhood Dreams</h3>
-                <p>Do you enjoy medieval or fantasy movies, books, games and worlds? Would like to experience the type of combat and battles they often have in a safe and playful way? Did you love to play knights, warriors, princes and princesses as children? Do you still love to? Or, if you have children, do they like these things? If your answer is yes, Santa's Guardians are definitely for you!</p>
-                
+                <p>Do you enjoy medieval or fantasy movies, books, games and worlds? Would you like to experience the type of combat and battles they often have in a safe and playful way? Did you love to play knights, warriors, princes and princesses as children? Do you still love to? Or, if you have children, do they like these things? If your answer is yes, Santa's Guardians are definitely for you!</p>
+
                 <p>The foundation of our activities is Elf Fighting. It is a high-energy sport for everyone in which you can truly let go, feel and share the excitement of physical outdoor activity and the joy of competing playfully against your close ones. It has been proven to be a lot of fun with complete strangers as well. Elf Fighting is the best thing you can do to actually live the epic and heroic moments from your favorite historical or fictional worlds or characters in real life.</p>
 
-                <h3>Is it Dangerous?</h3>
-                <p>Even though it is physical, it is safe. You set your own pace and level of effort. The weapons used are lightweight and padded. We use helmets for extra protection for your head and face. However, like in any sport, there are some risks that you should consider. You might fall over and sprain your ankle or get a minor bruise, but that's about the worst that can happen. We have an extra insurance for participants, but you should have your insurance in order.</p>
+                <h3>What Happens at a Boot Camp</h3>
+                <p>At the boot camps you will learn the basics of how and why elves fight. Everyone capable and willing will receive training on the various types of weapons the elves use:</p>
+                <ul class="chips">
+                    <li>Sword and shield</li>
+                    <li>Two-handed weapons</li>
+                    <li>Throwing spears</li>
+                    <li>Bows and arrows</li>
+                </ul>
+                <p>You will have fun through various game modes, working together and playfully competing against each other. After the basics you can play games such as:</p>
+                <ul class="chips">
+                    <li>Capture the flag</li>
+                    <li>Last elf standing</li>
+                    <li>King of the hill</li>
+                </ul>
+                <p>Participants not taking up arms may be assigned as referees, VIP persons to be protected or carriers for special objectives, so everyone gets to join.</p>
+                <p>We do everything outdoors. The weather needs to be very rainy or extremely cold before we cancel. The Guardians are quite tough like that, you know.</p>
 
                 <h3>Who is it For?</h3>
                 <p><strong>Minimum age is 12 years.</strong> We recommend that young fighters have an adult with them. There is no upper age limit, as long as you are in good enough shape to participate.</p>
-                
-                <p>The activities are designed for group sizes ranging from <strong>2 to 14 people</strong>.</p>
-                
-                <p>Most members of your group need to be able to move and use our equipment to make the activity work as intended. Those in your group who can't or don't want to get in the middle of the wildest battles, we have other roles, so that everyone gets to participate. If your group has members with disabilities but wants to take part in fighting, please contact us in advance, and we will see if can work something out for them as well.</p>
 
-                <h3>What is the Typical Activity Like?</h3>
-                <p>We do everything outdoors. The weather needs to be very rainy or extremely cold before we cancel. The Guardians are quite tough like that, you know.</p>
-                
-                <p>At the boot camps you will learn the basics of how and why elves fight. Everyone capable and willing will receive training on the various types of weapons the elves use: sword and shield, two-handed weapons, throwing spears, and bows and arrows. You will have fun through various game modes, working together and playfully competing against each other. After the basics you can play games such as capture the flag, hunger games, king of the hill, etc.</p>
-                
-                <p>Participants not taking up arms may be assigned as referees, VIP persons to be protected, carriers for special objectives, etc. so everyone gets to join.</p>
+                <p>Each boot camp is for <strong>4 to 8 people</strong>. Bigger group? <a href="index.html#contact">Contact us</a> and we will see what we can arrange.</p>
+
+                <p>Most members of your group need to be able to move and use our equipment to make the activity work as intended. For those in your group who can't or don't want to get in the middle of the wildest battles, we have other roles, so that everyone gets to participate. If your group has members with disabilities but wants to take part in fighting, please <a href="index.html#contact">contact us in advance</a>, and we will see if we can work something out for them as well.</p>
 
                 <h3>What are the Rules?</h3>
-                <p>All games are based on the basic concept of Elf Fighting. It has very simple rules which we will teach in few minutes.</p>
-                
+                <p>All games are based on the basic concept of Elf Fighting. It has very simple rules which we will teach in a few minutes.</p>
+
                 <p>The most important rule is that we play clean, nice and do not cheat. Cheating is naughty, and you know what Santa thinks about that!</p>
 
-                <h3>Will We Have to Be in Character?</h3>
-                <p>No, you won't. Unless you want to be! We welcome you warmly as yourself, just the way you are. We don't require you to play a role of any kind. The main thing is to feel the joy of movement and share happy moments playing together with your family and friends. However, if you feel like getting into character, we won't prevent you from doing so. Just be nice and mindful towards others. Santa loves that. And play by the rules. They are really simple.</p>
+                <h3>Still Wondering?</h3>
+                <p>Is it safe? What should you wear? Do you have to play a character? Find quick answers in our <a href="index.html#faq">FAQ</a>.</p>
 
                 <div class="cta-box">
                     <h3>Ready to Start Your Training?</h3>
                     <p>Book your Elf Fighting boot camp experience today!</p>
-                    <a href="index.html#booking" class="btn">Book Now</a>
+                    <a href="index.html#booking" class="btn btn-book">
+                        Book now
+                        <span class="btn-price">from 40&nbsp;&euro; per person</span>
+                    </a>
+                    <a class="cta-link" href="index.html#gallery">See photos and reviews</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <h3>Santa's Guardians</h3>
-            <p>Rovaniemi, Lapland</p>
-            <a href="mailto:info@santasguardians.com">info@santasguardians.com</a>
-            <p style="margin-top: 1rem; opacity: 0.7;">© 2025 Santa's Guardians. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="images/site-logo.png" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+                <div>
+                    <p class="footer-name">Santa&#39;s Guardians</p>
+                    <p class="footer-tagline">Elf Fighting boot camp in Rovaniemi, Lapland</p>
+                </div>
+            </div>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="index.html#booking">Book now</a>
+                <a href="index.html#how-it-works">How it works</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="index.html#location">Where we meet</a>
+                <a href="story.html">Story</a>
+                <a href="activities.html">Activities</a>
+            </nav>
+            <div class="footer-contact">
+                <a href="mailto:info@santasguardians.com">info@santasguardians.com</a>
+                <a class="footer-social" href="https://www.instagram.com/santasguardians" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                        <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+                <a class="footer-social" href="https://www.facebook.com/santasguardianslapland" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                        <path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Facebook</span>
+                </a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Santa&#39;s Guardians</p>
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            const hamburger = document.querySelector('.hamburger');
-            menu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            const menu = document.getElementById('navMenu');
-            const hamburger = document.querySelector('.hamburger');
-            menu.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
-    </script>
+    <script src="site.js"></script>
 </body>
 </html>
