@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAFT: walk-in schedule block | Santa's Guardians</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" href="images/website_favicon.png">
+    <link rel="stylesheet" href="styles.css?v=20260916">
+    <style>
+        /* Draft-only styles. Move into styles.css if we keep this block. */
+        .draft-note {
+            background: #3a2a05;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+            color: var(--gold-soft);
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 0.6rem var(--pad-x);
+        }
+
+        .schedule {
+            background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 100%);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .schedule-inner {
+            padding: 2.5rem var(--pad-x) 3rem;
+        }
+
+        .schedule h2 {
+            text-align: center;
+            font-size: clamp(1.9rem, 7vw, 2.5rem);
+            line-height: 1.15;
+            margin-bottom: 0.4rem;
+        }
+
+        /* Today card: the one thing a visitor standing in the village needs */
+        .today-card {
+            max-width: 34rem;
+            margin: 0 auto 1.5rem;
+            padding: 1.25rem 1.1rem;
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            background: rgba(10, 22, 40, 0.6);
+            box-shadow: 0 0 18px rgba(212, 175, 55, 0.15);
+            text-align: center;
+        }
+
+        .today-label {
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold-soft);
+        }
+
+        .today-time {
+            font-family: 'MedievalSharp', 'Papyrus', cursive;
+            font-size: clamp(2.2rem, 12vw, 3.2rem);
+            line-height: 1.05;
+            color: var(--gold);
+            margin: 0.2rem 0 0.35rem;
+        }
+
+        .today-rest {
+            font-size: 0.95rem;
+            color: var(--cream);
+        }
+
+        .schedule-list {
+            list-style: none;
+            max-width: 34rem;
+            margin: 0 auto 1.5rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        .schedule-list li {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            min-height: 48px;
+            padding: 0.55rem 0.5rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        .schedule-list .day {
+            font-weight: 700;
+            color: var(--gold-soft);
+        }
+
+        .schedule-list .times {
+            color: var(--cream);
+            text-align: right;
+        }
+
+        .schedule-list li.is-today {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid var(--gold);
+            padding-left: 0.75rem;
+        }
+
+        .schedule-list li.is-today .day::after {
+            content: ' \00b7 today';
+            font-weight: 400;
+            color: var(--gold);
+        }
+
+        .schedule-facts {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.45rem;
+            max-width: 34rem;
+            margin: 0 auto 1.75rem;
+        }
+
+        .schedule-facts li {
+            padding: 0.32rem 0.8rem;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 999px;
+            background: rgba(10, 22, 40, 0.5);
+            color: var(--gold-soft);
+            font-size: 0.82rem;
+            white-space: nowrap;
+        }
+
+        .where-card {
+            max-width: 34rem;
+            margin: 0 auto;
+            padding: 1.1rem;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 10px;
+            background: rgba(10, 22, 40, 0.5);
+        }
+
+        .where-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .where-card p {
+            font-size: 0.98rem;
+            line-height: 1.55;
+            color: var(--cream);
+            margin-bottom: 0.75rem;
+        }
+
+        .where-actions {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .where-actions a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0.6rem 1rem;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .where-actions a.primary {
+            background: linear-gradient(135deg, var(--red) 50%, var(--red-dark) 100%);
+            color: #fff;
+            font-family: 'MedievalSharp', 'Papyrus', cursive;
+            font-size: 1.2rem;
+        }
+
+        .schedule-alt {
+            max-width: 34rem;
+            margin: 1.5rem auto 0;
+            text-align: center;
+            font-size: 0.92rem;
+            color: rgba(244, 228, 193, 0.8);
+        }
+
+        .schedule-alt a {
+            color: var(--gold);
+        }
+
+        @media (min-width: 768px) {
+            .schedule-inner {
+                padding: 4rem var(--pad-x);
+            }
+
+            .schedule-grid {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                gap: 2.5rem;
+                align-items: start;
+                max-width: 60rem;
+                margin: 0 auto;
+            }
+
+            .schedule-grid > * {
+                max-width: none;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .today-card {
+                grid-column: 1 / -1;
+                margin-bottom: 2rem;
+            }
+
+            .schedule-facts {
+                grid-column: 1 / -1;
+                margin-bottom: 0;
+            }
+
+            .schedule-list {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p class="draft-note">Draft page for the walk-in idea. Times below are made up. Nothing here is linked from the live site.</p>
+
+    <!-- Header -->
+    <header>
+        <nav aria-label="Main">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/site-logo.png" alt="Santa&#39;s Guardians home" />
+                    <span class="logo-text">Santa&#39;s Guardians</span>
+                </a>
+            </div>
+            <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="navMenu">
+                <li><a href="index.html#how-it-works">How it works</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#location">Location</a></li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="nav-cta"><a class="nav-book" href="index.html#booking">Book now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- The block itself -->
+    <section class="schedule" id="schedule">
+        <div class="container schedule-inner">
+            <h2>Find us at Santa Claus Village</h2>
+            <p class="section-lead">Drop in, no booking needed. We run Elf Fighting sessions every day of the season.</p>
+
+            <div class="schedule-grid">
+                <div class="today-card" id="todayCard">
+                    <p class="today-label" id="todayLabel">Today&#39;s sessions</p>
+                    <p class="today-time" id="todayTime">11:00 &middot; 13:00 &middot; 15:00</p>
+                    <p class="today-rest" id="todayRest">Come 10 minutes early and look for the red Guardian banner.</p>
+                </div>
+
+                <ul class="schedule-list" id="scheduleList">
+                    <li data-day="1"><span class="day">Monday</span><span class="times">11:00, 13:00, 15:00</span></li>
+                    <li data-day="2"><span class="day">Tuesday</span><span class="times">11:00, 13:00, 15:00</span></li>
+                    <li data-day="3"><span class="day">Wednesday</span><span class="times">11:00, 13:00, 15:00</span></li>
+                    <li data-day="4"><span class="day">Thursday</span><span class="times">11:00, 13:00, 15:00</span></li>
+                    <li data-day="5"><span class="day">Friday</span><span class="times">11:00, 13:00, 15:00, 17:00</span></li>
+                    <li data-day="6"><span class="day">Saturday</span><span class="times">11:00, 13:00, 15:00, 17:00</span></li>
+                    <li data-day="0"><span class="day">Sunday</span><span class="times">13:00, 15:00</span></li>
+                </ul>
+
+                <div class="where-card">
+                    <h3>Where to find us</h3>
+                    <p>Santa Claus Village, Arctic Circle. Walk past the main gate and follow the signs to the forest edge. Look for the red Guardian banner.</p>
+                    <div class="where-actions">
+                        <a class="primary" href="https://maps.app.goo.gl/YBH2TpC7KfFd2wdk9" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                        <a href="tel:+358000000000">Call us: +358 00 000 0000</a>
+                    </div>
+                </div>
+
+                <ul class="schedule-facts">
+                    <li>1 hour</li>
+                    <li>Ages 12+</li>
+                    <li>50 &euro; adults</li>
+                    <li>40 &euro; children 12&ndash;15</li>
+                    <li>Card payment on the spot</li>
+                </ul>
+            </div>
+
+            <p class="schedule-alt">Coming with a group, or want a time of your own? <a href="index.html#booking">Book a private boot camp</a>.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="images/site-logo.png" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+                <div>
+                    <p class="footer-name">Santa&#39;s Guardians</p>
+                    <p class="footer-tagline">Elf Fighting boot camp in Rovaniemi, Lapland</p>
+                </div>
+            </div>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="index.html#booking">Book now</a>
+                <a href="index.html#how-it-works">How it works</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="index.html#location">Where we meet</a>
+                <a href="story.html">Story</a>
+                <a href="activities.html">Activities</a>
+            </nav>
+            <p class="footer-copy">&copy; 2026 Santa&#39;s Guardians</p>
+        </div>
+    </footer>
+
+    <script src="site.js?v=20260916"></script>
+    <script>
+        // ---- Edit the season schedule here. 0 = Sunday, 1 = Monday, and so on. ----
+        const SCHEDULE = {
+            0: ['13:00', '15:00'],
+            1: ['11:00', '13:00', '15:00'],
+            2: ['11:00', '13:00', '15:00'],
+            3: ['11:00', '13:00', '15:00'],
+            4: ['11:00', '13:00', '15:00'],
+            5: ['11:00', '13:00', '15:00', '17:00'],
+            6: ['11:00', '13:00', '15:00', '17:00']
+        };
+        const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const DOORS_OPEN_MINUTES = 10; // a session counts as gone this many minutes after it starts
+
+        (function () {
+            const now = new Date();
+            const today = now.getDay();
+            const minutesNow = now.getHours() * 60 + now.getMinutes();
+
+            // Mark today's row in the weekly list
+            const row = document.querySelector('#scheduleList li[data-day="' + today + '"]');
+            if (row) row.classList.add('is-today');
+
+            const toMinutes = function (t) {
+                const parts = t.split(':');
+                return parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+            };
+
+            const todays = SCHEDULE[today] || [];
+            const upcoming = todays.filter(function (t) {
+                return toMinutes(t) + DOORS_OPEN_MINUTES > minutesNow;
+            });
+
+            const label = document.getElementById('todayLabel');
+            const time = document.getElementById('todayTime');
+            const rest = document.getElementById('todayRest');
+
+            if (upcoming.length) {
+                label.textContent = 'Next session today';
+                time.textContent = upcoming[0];
+                rest.textContent = upcoming.length > 1
+                    ? 'Also today at ' + upcoming.slice(1).join(' and ') + '. Come 10 minutes early and look for the red Guardian banner.'
+                    : 'Last one today. Come 10 minutes early and look for the red Guardian banner.';
+            } else {
+                // Find the next day that has sessions
+                let step = 1;
+                while (step <= 7 && !(SCHEDULE[(today + step) % 7] || []).length) step++;
+                const nextDay = (today + step) % 7;
+                const nextTimes = SCHEDULE[nextDay] || [];
+                label.textContent = 'Done for today';
+                time.textContent = nextTimes.length ? nextTimes[0] : '';
+                rest.textContent = nextTimes.length
+                    ? 'Next sessions ' + (step === 1 ? 'tomorrow' : 'on ' + DAY_NAMES[nextDay]) + ' at ' + nextTimes.join(', ') + '.'
+                    : 'See the weekly times below.';
+            }
+        })();
+    </script>
+</body>
+</html>

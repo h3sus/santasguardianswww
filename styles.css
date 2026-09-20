@@ -497,12 +497,10 @@ a[href^="mailto:"]:hover {
         align-items: center;
     }
 
-    /* Wide screens get the shot with people on both edges and an
-       empty snow corridor down the middle, so the text lands on snow
-       instead of on someone's face. */
+    /* Same photo at every width. Shifted left so the recruit with the bow
+       stays in frame on tablets, where the sides get cropped the most. */
     .hero-media {
-        background-image: url('images/bootcamp/sg_bokun_5.jpeg');
-        background-position: center;
+        background-position: 30% center;
     }
 
     .hero-media::after {
@@ -727,7 +725,8 @@ a[href^="mailto:"]:hover {
     background: var(--navy-700);
 }
 
-.photo--big {
+.photo--big,
+.photo--wide {
     grid-column: 1 / -1;
     aspect-ratio: 16 / 10;
 }
@@ -783,6 +782,12 @@ a[href^="mailto:"]:hover {
     .photo--big {
         grid-column: span 2;
         grid-row: span 2;
+        aspect-ratio: auto;
+    }
+
+    /* fills the last two cells so the bento has no gap */
+    .photo--wide {
+        grid-column: span 2;
         aspect-ratio: auto;
     }
 
@@ -1941,5 +1946,109 @@ body.menu-open {
 @media (min-width: 768px) {
     .chips li {
         font-size: 1.02rem;
+    }
+}
+
+/* ---------- Academy course markers ---------- */
+.course-badge {
+    display: inline-block;
+    margin: 0 auto 0.6rem;
+    padding: 0.25rem 0.85rem;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 999px;
+    background: rgba(10, 22, 40, 0.5);
+    color: var(--gold-soft);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.how-inner {
+    text-align: center;
+}
+
+.how-inner .steps,
+.how-inner .course-note {
+    text-align: left;
+}
+
+.course-note {
+    max-width: 34rem;
+    margin: 2rem auto 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(244, 228, 193, 0.85);
+}
+
+@media (min-width: 768px) {
+    .how-inner .steps {
+        text-align: center;
+    }
+
+    .course-note {
+        text-align: center;
+        font-size: 1.05rem;
+        margin-top: 2.5rem;
+    }
+}
+
+/* ---------- Walk-in teaser ---------- */
+.walkin {
+    background: var(--navy-800);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.walkin-inner {
+    max-width: 34rem;
+    padding: 2.5rem var(--pad-x);
+    text-align: center;
+}
+
+.walkin h2 {
+    font-size: clamp(1.6rem, 6vw, 2.1rem);
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+}
+
+.walkin p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--cream);
+    margin-bottom: 1.4rem;
+}
+
+/* Quieter than the red booking button, so it reads as the second path */
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.6rem 1.6rem;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    background: rgba(10, 22, 40, 0.5);
+    color: var(--gold);
+    font-family: 'MedievalSharp', 'Papyrus', cursive;
+    font-size: 1.15rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+    background: var(--gold);
+    color: var(--navy-900);
+}
+
+@media (min-width: 768px) {
+    .walkin-inner {
+        padding: 3.5rem var(--pad-x);
+    }
+
+    .walkin p {
+        font-size: 1.12rem;
     }
 }
