@@ -412,7 +412,7 @@ a[href^="mailto:"]:hover {
 .hero-media {
     position: absolute;
     inset: 0;
-    background-image: url('images/bootcamp/sg_bokun_1.jpeg');
+    background-image: url('images/bootcamp/sg_bokun_1.jpg');
     background-size: cover;
     background-position: 34% center;
 }
@@ -1776,7 +1776,7 @@ body.menu-open {
 /* Activities: the duel photo */
 .sub-hero-art--activities {
     height: clamp(280px, 52svh, 520px);
-    background-image: url('images/bootcamp/sg_bokun_3.jpeg');
+    background-image: url('images/bootcamp/sg_bokun_3.jpg');
     background-position: 58% 40%;
 }
 
