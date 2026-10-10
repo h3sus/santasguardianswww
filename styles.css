@@ -1993,3 +1993,51 @@ body.menu-open {
         margin-top: 2.5rem;
     }
 }
+
+/* ---------- Thank you and error pages ---------- */
+.form-result {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-700) 100%);
+}
+
+.form-result-inner {
+    max-width: 34rem;
+    padding: 3rem var(--pad-x);
+    text-align: center;
+}
+
+.form-result-logo {
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.25rem;
+}
+
+.form-result h1 {
+    font-size: clamp(1.9rem, 7vw, 2.6rem);
+    line-height: 1.15;
+    margin-bottom: 0.9rem;
+}
+
+.form-result p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--cream);
+    margin-bottom: 0.9rem;
+}
+
+.form-result-note {
+    font-size: 0.95rem;
+    color: rgba(244, 228, 193, 0.8);
+}
+
+.form-result a:not(.btn) {
+    color: var(--gold);
+}
+
+.form-result .btn-book {
+    margin-top: 1.25rem;
+}

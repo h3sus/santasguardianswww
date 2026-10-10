@@ -295,8 +295,10 @@
             <h2>Get in touch</h2>
             <p class="section-lead">Questions about the boot camp or your booking? Send us a message, or email <a href="mailto:info@santasguardians.com">info@santasguardians.com</a>.</p>
 
-            <form class="contact-form" action="https://formspree.io/f/xkgqyqqo" method="POST">
-                <input type="hidden" name="_subject" value="New message from santasguardians.com">
+            <!-- Posts to our own contact.php, which emails the message and
+                 sends the visitor to thanks.html. The old Formspree endpoint
+                 was https://formspree.io/f/xkgqyqqo -->
+            <form class="contact-form" action="contact.php" method="POST">
                 <!-- Spam trap: real people never see or fill this field -->
                 <div class="hp" aria-hidden="true">
                     <label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
